@@ -1,0 +1,49 @@
+body {
+	position: absolute;
+	display: flex;
+
+	flex-flow: column nowrap;
+
+	justify-content: center;
+
+	width: 100%;
+	height: 100%;
+
+	margin: 0;
+	padding: 5rem;
+
+	box-sizing: border-box;
+
+	font-family: Arial, sans-serif;
+}
+
+span {
+	margin-bottom: 1rem;
+}
+
+#youtube-format {
+	margin-bottom: 1rem;
+}
+
+#ar-format {
+	margin-top: 1rem;
+}
+
+textarea {
+	height: 100%;
+}
+#convert-button {
+	width: 10%;
+	align-self: center;
+}
+
+#youtube-format-length,
+#ar-format-length {
+	font-weight: bold;
+}
+
+#inputs {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

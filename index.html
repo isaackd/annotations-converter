@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>YouTube Annotation Converter</title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+
+	<span>YouTube format length: <span id="youtube-format-length"></span></span>
+	<span>Annotations Restored format length: <span id="ar-format-length"></span></span>
+
+	<textarea id="youtube-format" placeholder="YOUTUBE ANNOTATION FORMAT..."></textarea>
+	<div id="inputs">
+		<input type="button" id="convert-button" value="Convert"> 
+		<input id="file-input" type="file" >
+	</div>
+	<textarea id="ar-format" readonly placeholder="ANNOTATIONS RESTORED FORMAT..."></textarea>
+
+	<script type="text/javascript" src="AnnotationParser.js"></script>
+	<script type="text/javascript" src="index.js"></script>
+</body>
+</html>
