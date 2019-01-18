@@ -20,7 +20,7 @@ convertButton.addEventListener("click", e => {
 		arFormat.value = parser.serializeAnnotationList(parsed);
 
 		youtubeLength.textContent = youtubeFormat.value.length;
-		const perc = arFormat.value.length / youtubeFormat.value.length;
+		const perc = (arFormat.value.length / youtubeFormat.value.length) * 100;
 		arFormatLength.textContent = `${arFormat.value.length} (${perc.toFixed(2)}%)`;
 	}
 });
