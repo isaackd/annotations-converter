@@ -53,12 +53,12 @@ class AnnotationParser {
 			for (const key in annotation) {
 				const mappedKey = map[key];
 				if ((key === "text" || key === "actionType" || key === "actionUrl") 
-					&& mappedKey && annotation[key]) {
+					&& mappedKey && annotation.hasOwnProperty(key)) {
 
 					let text = encodeURIComponent(annotation[key]);
 					serialized += `${mappedKey}=${text},`;
 				}
-				else if (mappedKey && annotation[key] &&
+				else if (mappedKey && annotation.hasOwnProperty(key) &&
 					(key !== "text" && key !== "actionType" && key !== "actionUrl")) {
 
 					serialized += `${mappedKey}=${annotation[key]},`;
