@@ -1,7 +1,7 @@
 class AnnotationParser {
 	/* ATTRIBUTES FOUND IN YOUTUBE'S ANNOTATION FORMAT */
 	static get baseAttributes() {
-		return ["id", "type", "popup", "log_data", "itct"];
+		return ["id", "type", "style", "popup", "log_data", "itct"];
 	}
 	/* ATTRIBUTES THAT MUST BE PRESENT IN AR FORMAT */
 	static get requiredAttributes() {
@@ -10,6 +10,7 @@ class AnnotationParser {
 	static get attributeMap() {
 		return {
 			type: "tp",
+			style: "s",
 			x: "x",
 			y: "y",
 			width: "w",
@@ -35,7 +36,7 @@ class AnnotationParser {
 			let finalValue = "";
 
 			if (mappedKey === "text" || mappedKey === "actionType" || mappedKey === "actionUrl"
-				|| mappedKey === "type") {
+				|| mappedKey === "type" || mappedKey === "style") {
 				finalValue = decodeURIComponent(value);
 			}
 			else {
@@ -57,7 +58,7 @@ class AnnotationParser {
 					let text = encodeURIComponent(annotation[key]);
 					serialized += `${mappedKey}=${text},`;
 				}
-				else if (mappedKey && 
+				else if (mappedKey && annotation[key] &&
 					(key !== "text" && key !== "actionType" && key !== "actionUrl")) {
 
 					serialized += `${mappedKey}=${annotation[key]},`;
@@ -149,9 +150,11 @@ class AnnotationParser {
 				height: backgroundShape.height, 
 				timeStart,
 				timeEnd,
-				type,
 				attributes
 			};
+
+			if (type) obj.type = type;
+			if (attributes.style) obj.style = attributes.style;
 
 			if (text) obj.text = text;
 			if (action) {
