@@ -10,11 +10,18 @@ body {
 	height: 100%;
 
 	margin: 0;
-	padding: 5rem;
+	padding: 2rem;
 
 	box-sizing: border-box;
 
 	font-family: Arial, sans-serif;
+}
+
+#additional-info {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+
+	margin-bottom: 1rem;
 }
 
 span {
@@ -27,6 +34,7 @@ span {
 
 #ar-format {
 	margin-top: 1rem;
+	margin-bottom: 1rem;
 }
 
 textarea {
@@ -37,13 +45,12 @@ textarea {
 	align-self: center;
 }
 
-#youtube-format-length,
-#ar-format-length {
-	font-weight: bold;
-}
-
 #inputs {
 	display: flex;
-	justify-content: center;
+	justify-content: space-around;
 	align-items: center;
+}
+
+.bold {
+	font-weight: bold;
 }

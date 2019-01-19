@@ -7,15 +7,35 @@
 </head>
 <body>
 
-	<span>YouTube format length: <span id="youtube-format-length"></span></span>
-	<span>Annotations Restored format length: <span id="ar-format-length"></span></span>
-
 	<textarea id="youtube-format" placeholder="YOUTUBE ANNOTATION FORMAT..."></textarea>
-	<div id="inputs">
-		<input type="button" id="convert-button" value="Convert"> 
-		<input id="file-input" type="file" >
+	<div id="inputs"> 
+		<input id="file-input" type="file" multiple >
+		<input type="button" id="convert-button" value="Convert">
+		<input type="button" id="load-json-dump" value="Load JSON dump" onclick="document.getElementById('json-file').click();">
+		<input id="json-file" type="file" accept="application/json" style="display:none;">
 	</div>
 	<textarea id="ar-format" readonly placeholder="ANNOTATIONS RESTORED FORMAT..."></textarea>
+
+	<div id="additional-info">
+		<div id="size-savings">
+			YouTube format character length: <span id="youtube-format-length" class="bold"></span>
+			<br>
+			Annotations Restored format length: <span id="ar-format-length" class="bold"></span>
+		</div>
+		<div>
+			types: <span id="unique-types" class="bold"></span>
+			<br>
+			styles: <span id="unique-styles" class="bold"></span>
+			<br>
+			action types: <span id="unique-action-types" class="bold"></span>
+			<br>
+			action triggers: <span id="unique-action-triggers" class="bold"></span>
+			<br>
+			movingRegion types: <span id="unique-region-types" class="bold"></span>
+			<br>
+			trigger state: <span id="unique-trigger-states" class="bold"></span>
+		</div>
+	</div>
 
 	<script type="text/javascript" src="AnnotationParser.js"></script>
 	<script type="text/javascript" src="index.js"></script>
