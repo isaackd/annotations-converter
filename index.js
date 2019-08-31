@@ -126,7 +126,7 @@ async function readFile(file, fileReader) {
 
 function convertAnnotationData(xml, serialize = true, updateLengths = true, updateUnique = true) {
 	const annotationElements = parser.getAnnotationsFromXml(xml);
-	const parsed = parser.parseYoutubeFormat(annotationElements);
+	const parsed = parser.parseYoutubeAnnotationList(annotationElements);
 	// collect stats
 	for (const annotation of annotationElements) {
 
